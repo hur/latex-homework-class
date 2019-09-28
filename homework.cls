@@ -169,7 +169,9 @@
       {\Large \hwclass{} \hwtype{} \hwnum}
 
       \hwname{} (\hwemail)
-
+      
+	  \hwgroup{}
+	  
       \today
     \end{center}
     \renewcommand{\headrulewidth}{0.4pt}
@@ -186,6 +188,8 @@
       {\Large \hwclass{} \hwtype{} \hwnum}
 
       \hwname{} (\hwemail)
+
+  	  \hwgroup{}
 
       \today
     \end{center}
