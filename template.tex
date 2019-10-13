@@ -1,18 +1,49 @@
 \documentclass[11pt,largemargins]{homework}
-
+\usepackage[mathscr]{euscript}
 % TODO: replace these with your information
-\newcommand{\hwname}{Andrew Carnegie}
-\newcommand{\hwemail}{carnegie}
+\newcommand{\hwname}{Name}
+\newcommand{\hwemail}{Email}
 \newcommand{\hwtype}{Homework}
 \newcommand{\hwnum}{0}
-\newcommand{\hwgroup}{Workshop group 1}
-\newcommand{\hwclass}{12-345}
-\newcommand{\hwlecture}{0}
-\newcommand{\hwsection}{Z}
+\newcommand{\hwgroup}{Workshop group 44}
+\newcommand{\hwclass}{Class name}
+\newcommand{\hwlecture}{}
+\newcommand{\hwsection}{}
+\renewcommand{\questiontype}{Section 2.1 Excercise}
+
+% Allows using \begin{matrix}[c] to be able to do matrix operation arrows on specific columns. See: https://tex.stackexchange.com/questions/3145/formatting-arrows-between-rows-of-corresponding-matrices
+\makeatletter 
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+  \hskip -\arraycolsep
+  \let\@ifnextchar\new@ifnextchar
+  \array{#1}}
+\makeatother
+% Allows using the previous as follows: \arrows3{}{}{R_2+R_3}
+\newcount\arrowcount
+\newcommand\arrows[1]{
+        \global\arrowcount#1
+        \ifnum\arrowcount>0
+                \begin{matrix}[c]
+                \expandafter\nextarrow
+        \fi
+}
+
+\newcommand\nextarrow[1]{
+        \global\advance\arrowcount-1
+        \ifx\relax#1\relax\else \xrightarrow{#1}\fi
+        \ifnum\arrowcount=0
+                \end{matrix}
+        \else
+                \\
+                \expandafter\nextarrow
+        \fi
+}
 
 \begin{document}
 \maketitle
 
+\setcounter{questionCounter}{1} % Next question will be 2
+\question
 % Your content
 
 \end{document}
